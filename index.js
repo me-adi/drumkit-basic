@@ -59,7 +59,7 @@ function makeSound(key) {
             default: console.log(thisbutton);
             break;
     }
-};
+}
 
 function buttonAnimation(currentkey) {
     var activebutton = document.querySelector("."+currentkey);
