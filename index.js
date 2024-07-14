@@ -8,14 +8,14 @@ for (let i = 0; i < numberOfButtons; i++) {
         var thisbutton = this.innerHTML;
 
         makeSound(thisbutton);
-  
+        buttonAnimation(thisbutton);
 }
 }
 
 document.addEventListener("keydown",function (event) {
     
        makeSound(event.key);
-
+       buttonAnimation(event.key);
 });
 
 function makeSound(key) {
@@ -61,3 +61,13 @@ function makeSound(key) {
     }
 };
 
+function buttonAnimation(currentkey) {
+    var activebutton = document.querySelector("."+currentkey);
+
+    activebutton.classList.add("pressed");
+    
+    setTimeout(function(){
+        activebutton.classList.remove("pressed");
+    }, 100);
+    
+}
